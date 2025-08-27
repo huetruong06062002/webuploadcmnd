@@ -98,8 +98,9 @@ export default function LicenseUpload() {
             <Typography.Text strong>Loại giấy phép</Typography.Text>
             <Form.Item name="licenseType" rules={[{ required: true, message: 'Vui lòng chọn loại giấy phép' }]}>
               <Select placeholder="Chọn loại giấy phép" className="mt-2">
-                <Option value="driving">Giấy phép lái xe</Option>
                 <Option value="business">Giấy phép kinh doanh</Option>
+                <Option value="pharmacy">Giấy phép dược</Option>
+                <Option value="professional">Giấy chứng chỉ hành nghề</Option>
                 <Option value="construction">Giấy phép xây dựng</Option>
                 <Option value="health">Giấy phép y tế</Option>
                 <Option value="education">Giấy phép giáo dục</Option>
@@ -207,16 +208,17 @@ export default function LicenseUpload() {
 
             <div>
               <Typography.Text strong>Loại giấy phép:</Typography.Text>
-              <div className="mt-1">
-                <Tag color="purple">
-                  {form.getFieldValue('licenseType') === 'driving' && 'Giấy phép lái xe'}
-                  {form.getFieldValue('licenseType') === 'business' && 'Giấy phép kinh doanh'}
-                  {form.getFieldValue('licenseType') === 'construction' && 'Giấy phép xây dựng'}
-                  {form.getFieldValue('licenseType') === 'health' && 'Giấy phép y tế'}
-                  {form.getFieldValue('licenseType') === 'education' && 'Giấy phép giáo dục'}
-                  {form.getFieldValue('licenseType') === 'other' && 'Khác'}
-                </Tag>
-              </div>
+                              <div className="mt-1">
+                  <Tag color="purple">
+                    {form.getFieldValue('licenseType') === 'business' && 'Giấy phép kinh doanh'}
+                    {form.getFieldValue('licenseType') === 'pharmacy' && 'Giấy phép dược'}
+                    {form.getFieldValue('licenseType') === 'professional' && 'Giấy chứng chỉ hành nghề'}
+                    {form.getFieldValue('licenseType') === 'construction' && 'Giấy phép xây dựng'}
+                    {form.getFieldValue('licenseType') === 'health' && 'Giấy phép y tế'}
+                    {form.getFieldValue('licenseType') === 'education' && 'Giấy phép giáo dục'}
+                    {form.getFieldValue('licenseType') === 'other' && 'Khác'}
+                  </Tag>
+                </div>
             </div>
 
             <div>
